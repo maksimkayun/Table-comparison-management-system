@@ -1,15 +1,33 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Project Sdk="Microsoft.NET.Sdk.Razor">
 
-	<PropertyGroup>
-		<OutputType>WinExe</OutputType>
-		<TargetFramework>net7.0-windows</TargetFramework>
-		<Nullable>enable</Nullable>
-		<UseWPF>true</UseWPF>
-		<RootNamespace>TCMS</RootNamespace>
-	</PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net7.0-windows7.0</TargetFramework>
+        <OutputType>WinExe</OutputType>
+        <UseWPF>true</UseWPF>
 
-	<ItemGroup>
-	  <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="7.0.92" />
-	</ItemGroup>
+        <!-- Project Options -->
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>TCMS</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" Version="7.0.*" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Update="wwwroot\css\app.css">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Update="wwwroot\css\bootstrap\bootstrap.min.css">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Update="wwwroot\index.html">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
 
 </Project>
